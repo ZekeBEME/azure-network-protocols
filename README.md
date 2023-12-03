@@ -36,7 +36,7 @@ Create two Virtual Machines(VM) in Azure, one running Windows 10 and one using L
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/2Tz2fpY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Use Remote Desktop to connect to your Windows 10 VM and install Wireshark from the web. Open Wireshark and filter for ICMP Traffic only. Retrieve the Private IP address of the Ubuntu VM and attempt to ping it from within the Windows 10 VM. The request times out because we haven't allowed ICMP traffic through the firewall.
@@ -53,7 +53,7 @@ Change both VMs to allow ICMP traffic then initiate a perpetual ping again from 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CNtqZrr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Back in Wireshark, filter for SSH traffic only. From your Windows 10 VM, “SSH into” your Ubuntu Virtual Machine (via its private IP address).Type commands (username, pwd, etc) into the linux SSH connection and observe SSH traffic spam in WireShark
@@ -61,7 +61,7 @@ Back in Wireshark, filter for SSH traffic only. From your Windows 10 VM, “SSH 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/TfrJ5Hs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Back in Wireshark, filter for DHCP traffic only. From your Windows 10 VM, attempt to issue your VM a new IP address from the command line (ipconfig /renew). Observe the DHCP traffic appearing in WireShark
@@ -85,7 +85,8 @@ Observe the DNS traffic being show in WireShark
 <p>
 Back in Wireshark, filter for RDP traffic only (tcp.port == 3389)
 Observe the immediate non-stop spam of traffic? Why do you think it’s non-stop spamming vs only showing traffic when you do an activity?
-Answer: because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
+
+  Answer: because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
 
 </p>
 <br />
